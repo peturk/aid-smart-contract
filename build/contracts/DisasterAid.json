@@ -1,0 +1,458 @@
+{
+  "contractName": "DisasterAid",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "donators",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "receiverId",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDonators",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[16]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b6040516020806102b0833981016040528080519060200190919050503360008260108110151561003b57fe5b0160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506102268061008a6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063ac62f56614610051578063bf1482fa146100b4575b600080fd5b341561005c57600080fd5b6100726004808035906020019091905050610105565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100bf57600080fd5b6100c761013a565b6040518082601060200280838360005b838110156100f25780820151818401526020810190506100d7565b5050505090500191505060405180910390f35b60008160108110151561011457fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6101426101bb565b60006010806020026040519081016040528092919082601080156101b1576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610167575b5050505050905090565b610200604051908101604052806010905b600073ffffffffffffffffffffffffffffffffffffffff168152602001906001900390816101cc57905050905600a165627a7a7230582057d8b8858eeb015eae0909f491879be69f7ed994d9ce0959c56fd049c210a4990029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063ac62f56614610051578063bf1482fa146100b4575b600080fd5b341561005c57600080fd5b6100726004808035906020019091905050610105565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100bf57600080fd5b6100c761013a565b6040518082601060200280838360005b838110156100f25780820151818401526020810190506100d7565b5050505090500191505060405180910390f35b60008160108110151561011457fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6101426101bb565b60006010806020026040519081016040528092919082601080156101b1576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610167575b5050505050905090565b610200604051908101604052806010905b600073ffffffffffffffffffffffffffffffffffffffff168152602001906001900390816101cc57905050905600a165627a7a7230582057d8b8858eeb015eae0909f491879be69f7ed994d9ce0959c56fd049c210a4990029",
+  "sourceMap": "69:561:0:-;;;403:108;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;470:10;447:8;456:10;447:20;;;;;;;;;;;:33;;;;;;;;;;;;;;;;;;403:108;69:561;;;;;;",
+  "deployedSourceMap": "69:561:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;94:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;544:83;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;94:27:0;;;;;;;;;;;;;;;;;;;;;;;;;:::o;544:83::-;588:11;;:::i;:::-;614:8;607:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;544:83;:::o;69:561::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17; // Version of Solidity compiler to be used\n\ncontract DisasterAid {\n  address[16] public donators;\n\n  /* This is the constructor which will be called once when the contract \n   * is deployed to the blockchain. When the contract is deployed we\n   * pass in an array of people that are potentially in need \n   */\n  //function DisasterAid(uint receiverId) public returns (uint) {\n  function DisasterAid(uint receiverId) {\n    donators[receiverId] = msg.sender;\n\n    //return receiverId;\n  }\n\n  // Retrieving the donators\n  function getDonators() public view returns (address[16]) {\n    return donators;\n  }\n\n}",
+  "sourcePath": "/home/annavigdis/Documents/school/aid-smart-contract/contracts/DisasterAid.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/annavigdis/Documents/school/aid-smart-contract/contracts/DisasterAid.sol",
+      "exportedSymbols": {
+        "DisasterAid": [
+          29
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".17"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            29
+          ],
+          "name": "DisasterAid",
+          "scope": 30
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "donators",
+              "scope": 29,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address[16] storage ref",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "address[16] storage pointer"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 2,
+                    "name": "ElementaryTypeName",
+                    "src": "94:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "hexvalue": "3136",
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "subdenomination": null,
+                      "token": "number",
+                      "type": "int_const 16",
+                      "value": "16"
+                    },
+                    "id": 3,
+                    "name": "Literal",
+                    "src": "102:2:0"
+                  }
+                ],
+                "id": 4,
+                "name": "ArrayTypeName",
+                "src": "94:11:0"
+              }
+            ],
+            "id": 5,
+            "name": "VariableDeclaration",
+            "src": "94:27:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "DisasterAid",
+              "payable": false,
+              "scope": 29,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "receiverId",
+                      "scope": 18,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 6,
+                        "name": "ElementaryTypeName",
+                        "src": "424:4:0"
+                      }
+                    ],
+                    "id": 7,
+                    "name": "VariableDeclaration",
+                    "src": "424:15:0"
+                  }
+                ],
+                "id": 8,
+                "name": "ParameterList",
+                "src": "423:17:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 9,
+                "name": "ParameterList",
+                "src": "441:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 5,
+                                  "type": "address[16] storage ref",
+                                  "value": "donators"
+                                },
+                                "id": 10,
+                                "name": "Identifier",
+                                "src": "447:8:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7,
+                                  "type": "uint256",
+                                  "value": "receiverId"
+                                },
+                                "id": 11,
+                                "name": "Identifier",
+                                "src": "456:10:0"
+                              }
+                            ],
+                            "id": 12,
+                            "name": "IndexAccess",
+                            "src": "447:20:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 98,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 13,
+                                "name": "Identifier",
+                                "src": "470:3:0"
+                              }
+                            ],
+                            "id": 14,
+                            "name": "MemberAccess",
+                            "src": "470:10:0"
+                          }
+                        ],
+                        "id": 15,
+                        "name": "Assignment",
+                        "src": "447:33:0"
+                      }
+                    ],
+                    "id": 16,
+                    "name": "ExpressionStatement",
+                    "src": "447:33:0"
+                  }
+                ],
+                "id": 17,
+                "name": "Block",
+                "src": "441:70:0"
+              }
+            ],
+            "id": 18,
+            "name": "FunctionDefinition",
+            "src": "403:108:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getDonators",
+              "payable": false,
+              "scope": 29,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 19,
+                "name": "ParameterList",
+                "src": "564:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 28,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address[16] memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "address[16] storage pointer"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "type": "address"
+                            },
+                            "id": 20,
+                            "name": "ElementaryTypeName",
+                            "src": "588:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "3136",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 16",
+                              "value": "16"
+                            },
+                            "id": 21,
+                            "name": "Literal",
+                            "src": "596:2:0"
+                          }
+                        ],
+                        "id": 22,
+                        "name": "ArrayTypeName",
+                        "src": "588:11:0"
+                      }
+                    ],
+                    "id": 23,
+                    "name": "VariableDeclaration",
+                    "src": "588:11:0"
+                  }
+                ],
+                "id": 24,
+                "name": "ParameterList",
+                "src": "587:13:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 24
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 5,
+                          "type": "address[16] storage ref",
+                          "value": "donators"
+                        },
+                        "id": 25,
+                        "name": "Identifier",
+                        "src": "614:8:0"
+                      }
+                    ],
+                    "id": 26,
+                    "name": "Return",
+                    "src": "607:15:0"
+                  }
+                ],
+                "id": 27,
+                "name": "Block",
+                "src": "601:26:0"
+              }
+            ],
+            "id": 28,
+            "name": "FunctionDefinition",
+            "src": "544:83:0"
+          }
+        ],
+        "id": 29,
+        "name": "ContractDefinition",
+        "src": "69:561:0"
+      }
+    ],
+    "id": 30,
+    "name": "SourceUnit",
+    "src": "0:630:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-03-15T23:29:57.131Z"
+}
