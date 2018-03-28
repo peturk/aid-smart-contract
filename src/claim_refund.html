@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Crowdfunding Campaign - Buy</title>
+    <title>Crowdfunding Campaign - Refund</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,34 +25,23 @@
           <hr/>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h3 class="panel-title">Funds Raised: <strong><span id="ETHRaised"></span></strong> out of <span id="ETHGoal"></span> Eth</h3>
-          <p>Campaing ends: <span id="EndTime"></span></p>
-          <br/>
-        </div>
-      </div>
 
       <div id="petsRow" class="row">
         <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">My Wallet</h3>
+              <h3 class="panel-title">Refund</h3>
             </div>
             <div class="panel-body">
+              <h4>Campaign Status</h4>
+              Finalized: <strong><span id="isFinalized"></span></strong> Goal Reached: <strong><span id="isGoalReached"></span></strong><br/><br/>
               <h4>Balance</h4>
               Your Token balance: <strong><span id="tokenBalance"></span></strong> tokens<br/><br/>
-              Get 1 token for <strong><span id="1TokenPrice"></span></strong> Eth<br/>
-              <button class="btn btn-primary" id="buy1Tokens" type="button">Buy 1 Token</button><br/>
-              <p id='response1'></p><br/>
-              Get 10 tokens for <strong><span id="10TokenPrice"></span></strong> Eth<br/>
-              <button class="btn btn-primary" id="buy10Tokens" type="button">Buy 10 Tokens</button><br/>
-              <p id='response10'></p><br/>
-              Get 100 tokens for <strong><span id="100TokenPrice"></span></strong> Eth<br/>
-              <button class="btn btn-primary" id="buy100Tokens" type="button">Buy 100 Tokens</button><br/>
-              <p id='response100'></p><br/>
-              To display your token balance in Metamask, add following address:<br/>
-              <span id='TokenContractAddress'></span>
+              <h4>Claim Refund</h4>
+              Ensure you are logged into your Ethereum wallet or Metamask with the same account you've funded the campaign.<br/><br/>
+              You may get refund of <strong id='ethRefundValue'><span></span></strong> Eth<br/><br/>
+              <button class="btn btn-primary" id="claimRefund" type="button">Claim Refund</button>
+              <p id='claimRefund_response'></p><br/>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 {
-  "name": "pet-shop",
+  "name": "tutorialtoken",
   "version": "1.0.0",
   "description": "",
   "main": "truffle.js",
@@ -16,6 +16,7 @@
     "lite-server": "^2.3.0"
   },
   "dependencies": {
-    "npm": "^5.7.1"
+    "npm": "^5.8.0",
+    "zeppelin-solidity": "^1.8.0"
   }
 }
