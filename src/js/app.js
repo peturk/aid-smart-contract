@@ -57,6 +57,7 @@ App = {
   },
 
   bindEvents: function() {
+    $(document).on('click', '#simulate', App.simulate);
     $(document).on('click', '#buy1Tokens', App.handleBuy1Tokens);
     $(document).on('click', '#buy10Tokens', App.handleBuy10Tokens);
     $(document).on('click', '#buy100Tokens', App.handleBuy100Tokens);
@@ -64,6 +65,16 @@ App = {
     $(document).on('click', '#claimRefund', App.handleClaimRefund);
   },
 
+  // TODO: Make Success links open in a new window
+  simulate: function() {
+    var obj = {
+      table: []
+   };
+   obj.table.push({id: 1, square:2});
+   var json = JSON.stringify(obj);
+   var fs = require('fs');
+   fs.writeFile('myjsonfile.json', json, 'utf8', callback);
+  },
   // TODO: Make Success links open in a new window
   handleBuy1Tokens: function send() {
     App.contracts.SampleCrowdsale.deployed().then(function(instance) {
