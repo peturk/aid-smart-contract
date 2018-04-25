@@ -1,6 +1,6 @@
 # aid-smart-contract
 
-########### Tutorials ###########
+# Tutorials
 
 Farið var eftir tveimur tutorial-um:
 
@@ -9,25 +9,25 @@ Farið var eftir tveimur tutorial-um:
 
 Það þarf að ná í open-zeppeline og setja zeppelin-solidity möppuna á réttan stað
 
-########### Truffle ###########
+# Truffle
 
 Install truffle: http://truffleframework.com/
-# For Linux and Apple
+- For Linux and Apple
 While in aid-smart-contract folder run: truffle develop
-# For Windows:
+- For Windows:
 While in aid-smart-contract folder run: truffle.cmd develop
 
 “New RPC URL” enter http://localhost:9545/
 Complile the contract by running: compile
 Deploy the contract onto the blockchain: migrate --reset
 
-########### MetaMask ###########
+# MetaMask
 
 Install MetaMask: https://metamask.io/
 Importing Existing DEN:
 candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
 
-########### Server ###########
+# Server
 
 Install npm: https://nodejs.org/en/
 Install node_modules: npm install
