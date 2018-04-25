@@ -12,7 +12,7 @@ Farið var eftir tveimur tutorial-um:
 # Truffle
 
 Install truffle: http://truffleframework.com/
-- For Linux and Apple
+- For Linux and Apple:
 While in aid-smart-contract folder run: truffle develop
 - For Windows:
 While in aid-smart-contract folder run: truffle.cmd develop
