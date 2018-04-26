@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
-import "../../../math/SafeMath.sol";
-import "../../../ownership/Ownable.sol";
+import "./math/SafeMath.sol";
+import "./Resources/Ownable.sol";
 
 contract Vault is Ownable {
 	using SafeMath for uint256;
