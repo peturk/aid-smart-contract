@@ -1,24 +1,22 @@
-const SampleCrowdsaleToken = artifacts.require('./SampleCrowdsaleToken.sol');
-const SampleCrowdsale = artifacts.require('./SampleCrowdsale.sol');
+const DisasterReliefToken = artifacts.require('./DisasterReliefToken.sol');
+const DisasterRelief = artifacts.require('./DisasterRelief.sol');
 
 module.exports = function(deployer, network, accounts) {
     const openingTime = web3.eth.getBlock('latest').timestamp + 20; // twenty secs in the future
     const closingTime = openingTime + 1800; // 30 min
-    const rate = new web3.BigNumber(1); // the rate is 1 token per 1 Eth
-    const wallet = accounts[1];
+    const rate = new web3.BigNumber; // the rate is 1 token per 1 Eth
 
     return deployer
         .then(() => {
-            return deployer.deploy(SampleCrowdsaleToken);
+            return deployer.deploy(DisasterReliefToken);
         })
         .then(() => {
             return deployer.deploy(
-                SampleCrowdsale,
+                DisasterRelief,
                 openingTime,
                 closingTime,
                 rate,
-                wallet,
-                SampleCrowdsaleToken.address,
+                DisasterReliefToken.address,
             );
         });
 };
