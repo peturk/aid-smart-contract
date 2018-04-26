@@ -30,6 +30,7 @@ contract Vault is Ownable {
 
 	function payOut(address _rescueAddr, uint256 weiAmount) onlyOwner public {
 		require(state == State.Active);
+		require(this.balance >= weiAmount);
 		_rescueAddr.transfer(weiAmount);
 		PayUp(_rescueAddr, weiAmount);
 	}

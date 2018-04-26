@@ -17,6 +17,11 @@ contract DisasterRelief is Crowdsale, TimedCrowdsale, FinalizableCrowdsale, usin
     address _walletEGIL = 0x821aea9a577a9b44299b9c15c88cf3087f3b5544; // 3
     address _closingADDR = 0x5aeda56215b167893e80b4fe645ba6d5bab767de; // Address 9
 
+    string public weatherInfoRvk;
+
+    event newOraclizeQuery(string description);
+    event newWeatherInfo(string info);
+
     Vault public vault;
 
     function DisasterRelief
@@ -30,6 +35,38 @@ contract DisasterRelief is Crowdsale, TimedCrowdsale, FinalizableCrowdsale, usin
         Crowdsale(_rate, _wallet, _token)
         TimedCrowdsale(_openingTime, _closingTime){
             vault = new Vault(_closingADDR);
+    }
+
+    function weiToEth(uint256 amount) returns (uint256)
+    {
+        return amount * 10^18;
+    }
+
+    function weatherReader()
+    {
+        update(); // first check at contract creation
+    }
+
+    function __callback(bytes32 myid, string result)
+    {
+        if (msg.sender != oraclize_cbAddress()) throw;
+
+        newWeatherInfo(result);
+        weatherInfoRvk = result;
+
+        weatherInfoRvk = weatherInfoRvk.toInt256(); // conversion TODO
+
+        if(weatherInfoRvk > 10)
+        {
+            vault.payOut(_walletRVK, weiToEth(1));
+        }
+    }
+    
+    function update() payable
+    {
+        newOraclizeQuery("Oraclize query was sent, standing by for the answer..");
+        // updates every 60 ----- wind speed m/s from rvk
+        oraclize_query(60, "URL", "json(http://apis.is/weather/observations/is?stations=1).results.F");
     }
 
 
