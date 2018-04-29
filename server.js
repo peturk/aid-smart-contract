@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.use(express.static('src'));
+app.use(express.static('build/contracts'));
 app.get('/', function (req, res) {
    res.sendFile( __dirname + "/" + "index.html" );
 })
