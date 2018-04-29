@@ -67,13 +67,17 @@ App = {
 
   // TODO: Make Success links open in a new window
   simulate: function() {
-    var obj = {
-      table: []
-   };
-   obj.table.push({id: 1, square:2});
-   var json = JSON.stringify(obj);
-   var fs = require('fs');
-   fs.writeFile('myjsonfile.json', json, 'utf8', callback);
+    $.getJSON( "/disaster_areas.json", function( data ) {
+      var items = [];
+      $.each( data, function( key, name ) {
+        items.push( "<li id='" + key + "'>" + name.id + " " + name.name +"</li>" );
+      });
+
+      $( "<ul/>", {
+        "class": "my-new-list",
+        html: items.join( "" )
+      }).appendTo( "body" );
+    });
   },
   // TODO: Make Success links open in a new window
   handleBuy1Tokens: function send() {
