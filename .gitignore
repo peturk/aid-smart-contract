@@ -1,5 +1,4 @@
 node_modules
-package-lock.json
 build/contracts/BasicToken.json
 build/contracts/CappedCrowdsale.json
 build/contracts/Crowdsale.json
@@ -17,4 +16,3 @@ build/contracts/SampleCrowdsale.json
 build/contracts/SampleCrowdsaleToken.json
 build/contracts/StandardToken.json
 build/contracts/TimedCrowdsale.json
-
