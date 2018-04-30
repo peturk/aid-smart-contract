@@ -63,11 +63,53 @@ App = {
     $(document).on('click', '#buy100Tokens', App.handleBuy100Tokens);
     $(document).on('click', '#finalizeButton', App.handleFinalize);
     $(document).on('click', '#claimRefund', App.handleClaimRefund);
+
+    $(document).on('submit', '#TheForm', App.submitTheForm);
+  },
+
+  submitTheForm: function(e) {
+    e.preventDefault()
+    if (!window.disasterData) {
+      alert('NO DATA')
+      return false
+    }
+
+    const vindhradi = parseInt(e.target.vindhradi.value)
+
+    let newObject = window.disasterData
+    newObject[0].vindhradi = vindhradi
+
+    console.log(newObject)
+
+    var postData = {
+      JSON_stringified: JSON.stringify(newObject)
+    }
+
+    $.post('/process_post', postData, (data, status) => {
+      //console.log('cool', data, status)
+
+      if (status !== 'success') {
+        alert('VILLA !!!!')
+      } else {
+        console.log('SUCCESS')
+        const parsedData = JSON.parse(data)
+        console.log(parsedData)
+        if (parsedData.message) {
+          alert(parsedData.message)
+        }
+      }
+    })
+
+    return false
   },
 
   // TODO: Make Success links open in a new window
   simulate: function() {
     $.getJSON( "/disaster_areas.json", function( data ) {
+      window.disasterData = data
+
+      /*
+      console.log(data)
       var items = [];
       $.each( data, function( key, name ) {
         items.push( "<li id='" + key + "'>" + name.id + " " + name.name +"</li>" );
@@ -77,6 +119,7 @@ App = {
         "class": "my-new-list",
         html: items.join( "" )
       }).appendTo( "body" );
+      */
     });
   },
   // TODO: Make Success links open in a new window

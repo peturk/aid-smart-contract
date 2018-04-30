@@ -33,11 +33,16 @@
         </div>
       </div>
 
-      <form action = "http://127.0.0.1:8081/process_post" method = "POST">
-        First Name: <input type = "text" name = "first_name"> <br>
-        Last Name: <input type = "text" name = "last_name">
-        <input type = "submit" value = "Submit">
-      </form>
+      <div>
+          <form
+            id = "TheForm"
+            action = "#"
+            method = "POST"
+          >
+            Vindhradi: <input type = "text" name = "vindhradi"> <br>
+            <input type = "submit" value = "Submit">
+          </form>
+      </div>
 
       <div>
         <button id="simulate">
@@ -73,11 +78,13 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
+    
   </body>
 </html>
