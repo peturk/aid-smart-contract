@@ -3,7 +3,8 @@ const SampleCrowdsale = artifacts.require('./SampleCrowdsale.sol');
 
 module.exports = function(deployer, network, accounts) {
     const openingTime = web3.eth.getBlock('latest').timestamp + 20; // twenty secs in the future
-    const closingTime = openingTime + 86400 * 20; // 20 days
+    // const closingTime = openingTime + 86400 * 20; // 20 days
+    const closingTime = openingTime + 86400; // 20 days
     const rate = new web3.BigNumber(1);
     const wallet = accounts[1];
 

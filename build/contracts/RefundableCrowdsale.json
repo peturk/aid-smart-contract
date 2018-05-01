@@ -363,7 +363,7 @@
             504,
             680,
             849,
-            1531
+            1452
           ],
           "contractKind": "contract",
           "documentation": "@title RefundableCrowdsale\r\n@dev Extension of Crowdsale contract that adds a funding goal, and\r\nthe possibility of users getting a refund if goal is not met.\r\nUses a RefundVault as the crowdsale's vault.\r",
@@ -372,7 +372,7 @@
             958,
             504,
             680,
-            1531,
+            1452,
             381
           ],
           "name": "RefundableCrowdsale",
@@ -573,7 +573,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -873,7 +873,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -933,7 +933,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1078,7 +1078,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 7685,
+                                  "referencedDeclaration": 1464,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1507,7 +1507,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 7723,
+                                  "referencedDeclaration": 1502,
                                   "type": "contract super RefundableCrowdsale",
                                   "value": "super"
                                 },
@@ -1688,7 +1688,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 7685,
+                                      "referencedDeclaration": 1464,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -1724,7 +1724,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 7685,
+                                  "referencedDeclaration": 1464,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1773,5 +1773,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-01T16:04:58.576Z"
+  "updatedAt": "2018-05-01T19:38:33.967Z"
 }

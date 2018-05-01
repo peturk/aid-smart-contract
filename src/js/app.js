@@ -37,6 +37,31 @@ App = {
         }
     });
 
+    $.ajax({
+        url: 'SampleCrowdsaleToken.json',
+        async: false,
+        dataType: 'json',
+        success:function(data){
+                // Get the necessary contract artifact file and instantiate it with truffle-contract.
+          var SampleCrowdsaleTokenArtifact = data;
+          App.contracts.SampleCrowdsaleToken = TruffleContract(SampleCrowdsaleTokenArtifact);
+
+          // Set the provider for our contract.
+          App.contracts.SampleCrowdsaleToken.setProvider(App.web3Provider);
+
+
+          // THIS needs to be done only the first time we run the contract
+
+          // tokenAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10' 
+          // coin = App.contracts.SampleCrowdsaleToken.at(tokenAddress)
+          // crowdsaleAddress = '0xf25186b5081ff5ce73482ad761db0eb0d25abfbf'
+          // coin.transferOwnership(crowdsaleAddress)
+
+
+          return App.getBalance(), App.getTokenContractAddress();
+        }
+    });
+
     $.getJSON('Vault.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var RefundVaultArtifact = data;
@@ -127,6 +152,7 @@ App = {
       */
     });
   },
+
   // TODO: Make Success links open in a new window
   handleBuy1Tokens: function send() {
     App.contracts.SampleCrowdsale.deployed().then(function(instance) {
@@ -134,7 +160,6 @@ App = {
       var crowdsaleContractAddress = crowdsale.address;
       crowdsale.rate().then(function(rate){
         var rate = rate;
-
         web3.eth.sendTransaction({
           from: web3.eth.coinbase,
           to: crowdsaleContractAddress,
@@ -157,7 +182,7 @@ App = {
       crowdsale = instance;
       var crowdsaleContractAddress = crowdsale.address;
       crowdsale.rate().then(function(rate){
-        var rate = rate;
+        var rate = rate*10;
 
         web3.eth.sendTransaction({
           from: web3.eth.coinbase,
@@ -181,7 +206,7 @@ App = {
       crowdsale = instance;
       var crowdsaleContractAddress = crowdsale.address;
       crowdsale.rate().then(function(rate){
-        var rate = rate;
+        var rate = rate*100;
 
         web3.eth.sendTransaction({
           from: web3.eth.coinbase,
@@ -250,8 +275,9 @@ App = {
         return crowdsale.rate();
     }).then(function(result){
       // tokenPrice1 = Math.round(1000*1/result)/1000;
+      // tokenPrice1 = Math.round(1000*1/result)/1000;
       tokenPrice1 = Math.round(result);
-      $('#1TokenPrice').text(tokenPrice1);
+      $('#1TokenPrice').text(tokenPrice1.toString(10));
       }).catch(function(err) {
           console.log(err.message);
         });
@@ -264,7 +290,7 @@ App = {
         return crowdsale.rate();
     }).then(function(result){
       tokenPrice10 = Math.round(10*result);
-      $('#10TokenPrice').text(tokenPrice10);
+      $('#10TokenPrice').text(tokenPrice10.toString(10));
       }).catch(function(err) {
           console.log(err.message);
         });
@@ -277,7 +303,7 @@ App = {
         return crowdsale.rate();
     }).then(function(result){
       tokenPrice100 = Math.round(100*result);
-      $('#100TokenPrice').text(tokenPrice100);
+      $('#100TokenPrice').text(tokenPrice100.toString(10));
       }).catch(function(err) {
           console.log(err.message);
         });

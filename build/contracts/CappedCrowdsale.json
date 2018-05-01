@@ -384,7 +384,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -776,7 +776,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 7707,
+                                  "referencedDeclaration": 1486,
                                   "type": "contract super CappedCrowdsale",
                                   "value": "super"
                                 },
@@ -855,7 +855,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1003,5 +1003,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-01T16:04:58.571Z"
+  "updatedAt": "2018-05-01T19:38:33.962Z"
 }

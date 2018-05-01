@@ -645,7 +645,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -995,7 +995,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1232,7 +1232,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 7685,
+                                      "referencedDeclaration": 1464,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -1361,7 +1361,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1663,7 +1663,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 7720,
+                                      "referencedDeclaration": 1499,
                                       "type": "contract RefundVault",
                                       "value": "this"
                                     },
@@ -1792,7 +1792,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -2089,7 +2089,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7688,
+                              "referencedDeclaration": 1467,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -2517,5 +2517,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-01T16:04:58.576Z"
+  "updatedAt": "2018-05-01T19:38:33.966Z"
 }
