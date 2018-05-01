@@ -6,6 +6,7 @@
             "picture": "images/reykjavik.jpg",
             "population": 3,
             "vindhradi": 5,
+            "F": 6,
             "location": "64.138191, -21.916645",
             "address": "0x2191eF87E392377ec08E7c08Eb105Ef5448eCED5"
         },
