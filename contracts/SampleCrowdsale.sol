@@ -1,24 +1,26 @@
 pragma solidity ^0.4.18;
 
+import "./SafeMath.sol";
+import "./Crowdsale.sol";
 import "./SampleCrowdsaleToken.sol";
 import "./MintedCrowdsale.sol";
 import "./FinalizableCrowdsale.sol";
 import "./TimedCrowdsale.sol";
 import "./Vault.sol";
 import "./oraclizeAPI.sol";
-import "./CappedCrowdsale.sol";
-import "./RefundableCrowdsale.sol";
+// import "./CappedCrowdsale.sol";
+// import "./RefundableCrowdsale.sol";
 
 
-contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale, MintedCrowdsale, usingOraclize {
+contract SampleCrowdsale is MintedCrowdsale, FinalizableCrowdsale, usingOraclize {
 
     using SafeMath for uint256;
 
-    // address _walletRVK = 0x627306090abab3a6e1400e9345bc60c78a8bef57; // Address 0
-    // address _walletAK = 0xf17f52151ebef6c7334fad080c5704d77216b732; // 1
-    // address _walletISA = 0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef; // 2
-    // address _walletEGIL = 0x821aea9a577a9b44299b9c15c88cf3087f3b5544; // 3
-    // address _closingADDR = 0x5aeda56215b167893e80b4fe645ba6d5bab767de; // Address 9
+    address _walletRVK = 0x627306090abab3a6e1400e9345bc60c78a8bef57; // Address 0
+    address _walletAK = 0xf17f52151ebef6c7334fad080c5704d77216b732; // 1
+    address _walletISA = 0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef; // 2
+    address _walletEGIL = 0x821aea9a577a9b44299b9c15c88cf3087f3b5544; // 3
+    address _closingADDR = 0x5aeda56215b167893e80b4fe645ba6d5bab767de; // Address 9
 
     string public weatherInfoRvk;
 
@@ -29,22 +31,18 @@ contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale, MintedCrowdsal
 
     function SampleCrowdsale
     (
-        uint256 _openingTime,
+        uint256 _openingTime, 
         uint256 _closingTime,
         uint256 _rate,
         address _wallet,
-        uint256 _cap,
-        MintableToken _token,
-        uint256 _goal 
+        MintableToken _token
     ) 
-    public 
-    Crowdsale(_rate, _wallet, _token)
-    CappedCrowdsale(_cap)
-    TimedCrowdsale(_openingTime, _closingTime)
-    RefundableCrowdsale(_goal)
-    {
-         require(_goal <= _cap);
+        public
+        Crowdsale(_rate, _wallet, _token)
+        TimedCrowdsale(_openingTime, _closingTime){
+            vault = new Vault(_closingADDR);
     }
+
 
     function weiToEth(uint256 amount) returns (uint256)
     {
@@ -67,10 +65,10 @@ contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale, MintedCrowdsal
 
         // weatherInfoRvk = weatherInfoRvk.toInt256(); // conversion TODO
 
-        // if(parseInt(weatherInfoRvk) > 10)
-        // {
-        //      vault.payOut(_walletRVK, weiToEth(1));
-        // }
+        if(parseInt(weatherInfoRvk) > 10)
+        {
+             vault.payOut(_walletRVK, weiToEth(1));
+        }
     }
     
     function update() payable

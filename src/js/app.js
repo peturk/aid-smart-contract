@@ -37,7 +37,7 @@ App = {
         }
     });
 
-    $.getJSON('RefundVault.json', function(data) {
+    $.getJSON('Vault.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var RefundVaultArtifact = data;
       App.contracts.RefundVault = TruffleContract(RefundVaultArtifact);
@@ -138,7 +138,7 @@ App = {
         web3.eth.sendTransaction({
           from: web3.eth.coinbase,
           to: crowdsaleContractAddress,
-          value: web3.toWei(1/rate, 'ether')
+          value: web3.toWei(rate, 'ether')
 
         },function(error, result) {
           if (!error) {
@@ -162,7 +162,7 @@ App = {
         web3.eth.sendTransaction({
           from: web3.eth.coinbase,
           to: crowdsaleContractAddress,
-          value: web3.toWei(10/rate, 'ether')
+          value: web3.toWei(rate, 'ether')
 
         },function(error, result) {
           if (!error) {
@@ -186,7 +186,7 @@ App = {
         web3.eth.sendTransaction({
           from: web3.eth.coinbase,
           to: crowdsaleContractAddress,
-          value: web3.toWei(100/rate, 'ether')
+          value: web3.toWei(rate, 'ether')
 
         },function(error, result) {
           if (!error) {
@@ -249,8 +249,9 @@ App = {
         crowdsale = instance;
         return crowdsale.rate();
     }).then(function(result){
-      tokenPrice1 = Math.round(1000*1/result)/1000;
-      $('#1TokenPrice').text(tokenPrice1.toString(10));
+      // tokenPrice1 = Math.round(1000*1/result)/1000;
+      tokenPrice1 = Math.round(result);
+      $('#1TokenPrice').text(tokenPrice1);
       }).catch(function(err) {
           console.log(err.message);
         });
@@ -262,8 +263,8 @@ App = {
         crowdsale = instance;
         return crowdsale.rate();
     }).then(function(result){
-      tokenPrice10 = Math.round(1000*10/result)/1000;
-      $('#10TokenPrice').text(tokenPrice10.toString(10));
+      tokenPrice10 = Math.round(10*result);
+      $('#10TokenPrice').text(tokenPrice10);
       }).catch(function(err) {
           console.log(err.message);
         });
@@ -275,8 +276,8 @@ App = {
         crowdsale = instance;
         return crowdsale.rate();
     }).then(function(result){
-      tokenPrice100 = Math.round(1000*100/result)/1000;
-      $('#100TokenPrice').text(tokenPrice100.toString(10));
+      tokenPrice100 = Math.round(100*result);
+      $('#100TokenPrice').text(tokenPrice100);
       }).catch(function(err) {
           console.log(err.message);
         });
