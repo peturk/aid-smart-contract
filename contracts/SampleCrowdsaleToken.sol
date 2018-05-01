@@ -1,9 +1,9 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.18;
 
-import "../node_modules/zeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
+import "./MintableToken.sol";
 
 contract SampleCrowdsaleToken is MintableToken {
-    string public name = "AID COIN";
-    string public symbol = "AID";
+    string public name = "Takk COIN";
+    string public symbol = "Takk";
     uint256 public decimals = 18;
 }

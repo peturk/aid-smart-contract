@@ -22,14 +22,19 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON('SampleCrowdsale.json', function(data) {
-      // Get the necessary contract artifact file and instantiate it with truffle-contract.
-      var SampleCrowdsaleArtifact = data;
-      App.contracts.SampleCrowdsale = TruffleContract(SampleCrowdsaleArtifact);
+    $.ajax({
+        url: 'SampleCrowdsale.json',
+        async: false,
+        dataType: 'json',
+        success:function(data){
+                // Get the necessary contract artifact file and instantiate it with truffle-contract.
+          var SampleCrowdsaleArtifact = data;
+          App.contracts.SampleCrowdsale = TruffleContract(SampleCrowdsaleArtifact);
 
-      // Set the provider for our contract.
-      App.contracts.SampleCrowdsale.setProvider(App.web3Provider);
-      return App.getRaisedFunds(), App.getGoalFunds(), App.getEndTime(), App.isFinalized(), App.getTokenPrice1(), App.getTokenPrice10(), App.getTokenPrice100(), App.isGoalReached(), App.getEthRefundValue();
+          // Set the provider for our contract.
+          App.contracts.SampleCrowdsale.setProvider(App.web3Provider);
+          return App.getRaisedFunds(), App.getGoalFunds(), App.getEndTime(), App.isFinalized(), App.getTokenPrice1(), App.getTokenPrice10(), App.getTokenPrice100(), App.isGoalReached(), App.getEthRefundValue();
+        }
     });
 
     $.getJSON('RefundVault.json', function(data) {
