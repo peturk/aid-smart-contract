@@ -49,14 +49,12 @@ App = {
           // Set the provider for our contract.
           App.contracts.SampleCrowdsaleToken.setProvider(App.web3Provider);
 
-
           // THIS needs to be done only the first time we run the contract
 
           // tokenAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10' 
           // coin = App.contracts.SampleCrowdsaleToken.at(tokenAddress)
           // crowdsaleAddress = '0xf25186b5081ff5ce73482ad761db0eb0d25abfbf'
           // coin.transferOwnership(crowdsaleAddress)
-
 
           return App.getBalance(), App.getTokenContractAddress();
         }

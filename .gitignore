@@ -17,3 +17,8 @@ build/contracts/SampleCrowdsale.json
 build/contracts/SampleCrowdsaleToken.json
 build/contracts/StandardToken.json
 build/contracts/TimedCrowdsale.json
+build/contracts/OraclizeAddrResolverI.json
+build/contracts/OraclizeI.json
+build/contracts/Vault.json
+build/contracts/usingOraclize.json
+

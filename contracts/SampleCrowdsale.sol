@@ -35,7 +35,7 @@ contract SampleCrowdsale is MintedCrowdsale, FinalizableCrowdsale, usingOraclize
         MintableToken _token
     ) 
         public
-        Crowdsale(_rate, _wallet, _token)
+        Crowdsale(_rate, _closingADDR, _token)
         TimedCrowdsale(_openingTime, _closingTime){
             vault = new Vault(_closingADDR);
     }
