@@ -142,6 +142,7 @@ App = {
       $.each( data, function( key, name ) {
         items.push( "<li id='" + key + "'>" + name.id + " " + name.name +"</li>" );
       });
+
       $( "<ul/>", {
         "class": "my-new-list",
         html: items.join( "" )
