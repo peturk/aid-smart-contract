@@ -63,7 +63,10 @@ App = {
     $(document).on('click', '#buy100Tokens', App.handleBuy100Tokens);
     $(document).on('click', '#finalizeButton', App.handleFinalize);
     $(document).on('click', '#claimRefund', App.handleClaimRefund);
+    
+    $(document).on('click', '#buyWithoutMetaMask', App.BuyTokenWithoutMetaMask);
 
+    $(document).on('click', '#showMap', App.windMap);
     $(document).on('submit', '#TheForm', App.submitTheForm);
   },
 
@@ -104,6 +107,44 @@ App = {
   },
 
   // TODO: Make Success links open in a new window
+  windMap: function() {
+    console.log('Hello')
+    var windImage;
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 6.2,
+          center: {lat: 64.7343702, lng: -19.035984}
+        });
+        setTimeout(function() { setImage(64.0888148,-21.9004728, 20); }, 0);
+      }
+      
+      function setImage(lat, long, speed) {
+      	var offset = Math.sqrt(speed)/10;
+     		var imageBounds = {
+          north: lat+0.1+offset,
+          south: lat-0.1-offset,
+          east:  long+0.3+offset,
+          west:  long-0.3-offset
+        };
+
+        windImage = new google.maps.GroundOverlay(
+            'http://www.pngmart.com/files/3/Wind-PNG-Clipart.png',
+            imageBounds);
+        windImage.setMap(map);
+        //Remove image after 10 seconds
+        //setTimeout(removeImage, 10000);
+	
+      } 
+      
+      function removeImage() {
+      	windImage.setMap(null);
+      }
+
+      // async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5Nx5qZdIfASvSZBVpCqt_ZYSUdH7dZd4&callback=initMap"
+  },
+
+  // TODO: Make Success links open in a new window
   simulate: function() {
     $.getJSON( "/disaster_areas.json", function( data ) {
       window.disasterData = data
@@ -121,6 +162,17 @@ App = {
       }).appendTo( "body" );
       */
     });
+  },
+  BuyTokenWithoutMetaMask: function send() {
+    purchaser = web3.eth.accounts[2]
+    SampleCrowdsale.deployed().then(inst => { crowdsale = inst })
+    crowdsale.token().then(addr => { tokenAddress = addr } )
+    coin = SampleCrowdsaleToken.at(tokenAddress)
+    coin.transferOwnership(crowdsale.address)
+    coin.balanceOf(purchaser).then(balance => balance.toString(10))
+    SampleCrowdsale.deployed().then(inst => inst.sendTransaction({ from: purchaser, to: crowdsale.address, value: web3.toWei(5, "ether")}))
+    coin.balanceOf(purchaser).then(balance => purchaserGusTokenBalance = balance.toString(10))
+    web3.fromWei(purchaserGusTokenBalance, "ether")
   },
   // TODO: Make Success links open in a new window
   handleBuy1Tokens: function send() {

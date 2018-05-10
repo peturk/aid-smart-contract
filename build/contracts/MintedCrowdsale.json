@@ -108,7 +108,7 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.18;\n\nimport \"../Crowdsale.sol\";\nimport \"../../token/ERC20/MintableToken.sol\";\n\n\n/**\n * @title MintedCrowdsale\n * @dev Extension of Crowdsale contract whose tokens are minted in each purchase.\n * Token ownership should be transferred to MintedCrowdsale for minting. \n */\ncontract MintedCrowdsale is Crowdsale {\n\n  /**\n   * @dev Overrides delivery by minting tokens upon purchase.\n   * @param _beneficiary Token purchaser\n   * @param _tokenAmount Number of tokens to be minted\n   */\n  function _deliverTokens(address _beneficiary, uint256 _tokenAmount) internal {\n    require(MintableToken(token).mint(_beneficiary, _tokenAmount));\n  }\n}\n",
+  "source": "pragma solidity ^0.4.21;\n\nimport \"../Crowdsale.sol\";\nimport \"../../token/ERC20/MintableToken.sol\";\n\n\n/**\n * @title MintedCrowdsale\n * @dev Extension of Crowdsale contract whose tokens are minted in each purchase.\n * Token ownership should be transferred to MintedCrowdsale for minting. \n */\ncontract MintedCrowdsale is Crowdsale {\n\n  /**\n   * @dev Overrides delivery by minting tokens upon purchase.\n   * @param _beneficiary Token purchaser\n   * @param _tokenAmount Number of tokens to be minted\n   */\n  function _deliverTokens(address _beneficiary, uint256 _tokenAmount) internal {\n    require(MintableToken(token).mint(_beneficiary, _tokenAmount));\n  }\n}\n",
   "sourcePath": "C:\\Cryptocurrency\\aid-smart-contract\\node_modules\\zeppelin-solidity\\contracts\\crowdsale\\emission\\MintedCrowdsale.sol",
   "ast": {
     "absolutePath": "/C/Cryptocurrency/aid-smart-contract/node_modules/zeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
@@ -126,7 +126,7 @@
           "solidity",
           "^",
           "0.4",
-          ".18"
+          ".21"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:4"
@@ -461,7 +461,7 @@
           "solidity",
           "^",
           "0.4",
-          ".18"
+          ".21"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:4"
@@ -786,5 +786,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-01T12:59:14.789Z"
+  "updatedAt": "2018-05-10T16:21:21.407Z"
 }
