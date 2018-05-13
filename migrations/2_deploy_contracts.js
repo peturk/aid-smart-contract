@@ -19,9 +19,9 @@ module.exports = function(deployer, network, accounts) {
                 closingTime,
                 rate,
                 wallet,
-                // 200000000000000000000,
-                SampleCrowdsaleToken.address
-                // 100000000000000000000
+                200000000000000000000,
+                SampleCrowdsaleToken.address,
+                100000000000000000000
             );
         });
 };
