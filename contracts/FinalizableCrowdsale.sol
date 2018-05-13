@@ -2,14 +2,15 @@ pragma solidity ^0.4.18;
 
 import "./SafeMath.sol";
 import "./Ownable.sol";
-import "./TimedCrowdsale.sol";
+import "./Crowdsale.sol";
+
 
 /**
  * @title FinalizableCrowdsale
  * @dev Extension of Crowdsale where an owner can do extra work
  * after finishing.
  */
-contract FinalizableCrowdsale is TimedCrowdsale, Ownable {
+contract FinalizableCrowdsale is Crowdsale, Ownable {
   using SafeMath for uint256;
 
   bool public isFinalized = false;
@@ -22,7 +23,7 @@ contract FinalizableCrowdsale is TimedCrowdsale, Ownable {
    */
   function finalize() onlyOwner public {
     require(!isFinalized);
-    require(hasClosed());
+    require(hasEnded());
 
     finalization();
     Finalized();

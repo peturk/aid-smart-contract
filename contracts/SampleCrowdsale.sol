@@ -5,7 +5,15 @@ import "./CappedCrowdsale.sol";
 import "./RefundableCrowdsale.sol";
 import "./MintedCrowdsale.sol";
 
-contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale, MintedCrowdsale {
+import "./MintableToken.sol";
+
+contract SampleCrowdsaleToken is MintableToken {
+    string public name = "Takk COIN";
+    string public symbol = "Takk";
+    uint256 public decimals = 18;
+}
+
+contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale {
 
     // using SafeMath for uint256;
 
@@ -25,22 +33,25 @@ contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale, MintedCrowdsal
         uint256 _openingTime,
         uint256 _closingTime,
         uint256 _rate,
-        address _wallet,
+        uint256 _goal,
         uint256 _cap,
-        MintableToken _token,
-        uint256 _goal
+        address _wallet
     )
         public
-        Crowdsale(_rate, _wallet, _token)
         CappedCrowdsale(_cap)
-        TimedCrowdsale(_openingTime, _closingTime)
+        FinalizableCrowdsale()
         RefundableCrowdsale(_goal)
+        Crowdsale(_openingTime, _closingTime, _rate, _wallet)
     {
     //As goal needs to be met for a successful crowdsale
     //the value needs to less or equal than a cap which is limit for accepted funds
         require(_goal <= _cap);
     }
 
+    function createTokenContract() internal returns (MintableToken) {
+        return new SampleCrowdsaleToken();
+    }
+    
     // function weiToEth(uint256 amount) returns (uint256)
     // {
     //     return amount * 10^18;

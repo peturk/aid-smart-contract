@@ -52,8 +52,10 @@ App = {
           // THIS needs to be done only the first time we run the contract
 
           // tokenAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10' 
+          // tokenAddress = '0xf2beae25b23f0ccdd234410354cb42d08ed54981'
           // coin = App.contracts.SampleCrowdsaleToken.at(tokenAddress)
-          // crowdsaleAddress = '0xf25186b5081ff5ce73482ad761db0eb0d25abfbf'
+          // // crowdsaleAddress = '0xf25186b5081ff5ce73482ad761db0eb0d25abfbf'
+          // crowdsaleAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10'
           // coin.transferOwnership(crowdsaleAddress)
 
           return App.getBalance(), App.getTokenContractAddress();
@@ -311,7 +313,7 @@ App = {
     console.log('Getting endtime...');
     App.contracts.SampleCrowdsale.deployed().then(function(instance) {
         crowdsale = instance;
-        return crowdsale.closingTime();
+        return crowdsale.endTime();
     }).then(function(result){
       endTime = new Date(result.c[0]*1000);
       console.log(endTime);
