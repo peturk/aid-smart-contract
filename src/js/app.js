@@ -60,7 +60,7 @@ App = {
         }
     });
 
-    $.getJSON('Vault.json', function(data) {
+    $.getJSON('RefundVault.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var RefundVaultArtifact = data;
       App.contracts.RefundVault = TruffleContract(RefundVaultArtifact);
