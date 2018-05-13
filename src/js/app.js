@@ -311,7 +311,7 @@ App = {
     console.log('Getting endtime...');
     App.contracts.SampleCrowdsale.deployed().then(function(instance) {
         crowdsale = instance;
-        return crowdsale.endTime();
+        return crowdsale.closingTime();
     }).then(function(result){
       endTime = new Date(result.c[0]*1000);
       console.log(endTime);
