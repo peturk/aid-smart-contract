@@ -17,11 +17,11 @@ contract RefundVault is Ownable {
 
   mapping (address => uint256) public deposited;
   address public wallet;
-  address _walletAK = 0xf17f52151ebef6c7334fad080c5704d77216b732; // 1
-  address _walletRVK = 0x627306090abab3a6e1400e9345bc60c78a8bef57; // Address 0
-  address _walletISA = 0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef; // 2
-  address _walletEGIL = 0x821aea9a577a9b44299b9c15c88cf3087f3b5544; // 3
-  address _closingADDR = 0x5aeda56215b167893e80b4fe645ba6d5bab767de; // Address 9
+  address _walletRVK = 0xf17f52151ebef6c7334fad080c5704d77216b732; // 1
+  address _walletAK = 0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef; // 2
+  address _walletISA = 0x821aea9a577a9b44299b9c15c88cf3087f3b5544; // 3
+  address _walletEGIL = 0x0d1d4e623d10f9fba5db95830f7d3839406c6af2; // 4
+  // address _closingADDR = 0x5aeda56215b167893e80b4fe645ba6d5bab767de; // Address 9
   State public state;
 
 
@@ -40,20 +40,27 @@ contract RefundVault is Ownable {
     deposited[investor] = deposited[investor].add(msg.value);
   }
 
-  function ethToWei(uint256 amount) returns (uint256)
+  /*function ethToWei(uint256 amount) returns (uint256)
   {
       return amount * 10^18;
-  }
+  }*/
 
   function payUpRvk() public {
     require(state == State.Active);
-
-    // uint256 value = ((this.balance) * 2)/10;
-    // uint256 value = ethToWei(1);
-    // require(this.balance > value);
-
-    _closingADDR.transfer(1);
+    _walletRVK.transfer(this.balance*uint256(2)/uint256(8));
   }
+  function payUpAk() public {
+    require(state == State.Active);
+    _walletAK.transfer(this.balance*uint256(2)/uint256(8));
+  }
+  function payUpIsa() public {
+    require(state == State.Active);
+    _walletISA.transfer(this.balance*uint256(2)/uint256(8));
+  }
+  function payUpEgil() public {
+    require(state == State.Active);
+    _walletEGIL.transfer(this.balance*uint256(2)/uint256(8));
+  }      
 
   function payUp() public {
     require(state == State.Active);
