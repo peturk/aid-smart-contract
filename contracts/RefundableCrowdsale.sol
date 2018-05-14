@@ -35,6 +35,14 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
     vault.refund(msg.sender);
   }
 
+  function payRvkWallet() public {
+    vault.payUpRvk();
+  } 
+
+  function payWallet() public {
+    vault.payUp();
+  } 
+
   function goalReached() public view returns (bool) {
     return weiRaised >= goal;
   }

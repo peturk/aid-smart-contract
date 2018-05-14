@@ -4,7 +4,7 @@ import "./Crowdsale.sol";
 import "./CappedCrowdsale.sol";
 import "./RefundableCrowdsale.sol";
 import "./MintedCrowdsale.sol";
-
+import "./oraclizeAPI.sol";
 import "./MintableToken.sol";
 
 contract SampleCrowdsaleToken is MintableToken {
@@ -46,6 +46,7 @@ contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     //As goal needs to be met for a successful crowdsale
     //the value needs to less or equal than a cap which is limit for accepted funds
         require(_goal <= _cap);
+        // update();
     }
 
     function createTokenContract() internal returns (MintableToken) {
@@ -59,6 +60,7 @@ contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale {
 
     // function weatherReader()
     // {
+    //     oraclize_setProof(ProofType_TLSNotary | proofStorage_IPFS);
     //     update(); // first check at contract creation
     // }
 
@@ -66,20 +68,19 @@ contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     // {
     //     if (msg.sender != oraclize_cbAddress()) throw;
 
-    //     newWeatherInfo(result);
     //     weatherInfoRvk = result;
-
-    //     if(parseInt(weatherInfoRvk) > 10)
-    //     {
-    //         vault.payOut(_walletRVK, weiToEth(1));
-    //     }
+    //     newWeatherInfo(weatherInfoRvk);
+    //     update();
     // }
     
     // function update() payable
     // {
-    //     newOraclizeQuery("Oraclize query was sent, standing by for the answer..");
-    //     // updates every 60 ----- wind speed m/s from rvk
-    //     oraclize_query(60, "URL", "json(http://localhost:8081/disaster_areas.json).results.F");
+    //     if (oraclize_getPrice("URL") > this.balance) {
+    //         newOraclizeQuery("Oraclize query was NOT sent, please add some ETH to cover for the query fee");
+    //     } else {
+    //         newOraclizeQuery("Oraclize query was sent, standing by for the answer..");
+    //         oraclize_query(60, "URL", "json(https://tall-fireant-32.localtunnel.me/disaster_areas.json).results.0.F");
+    //     }
     // }
 
 }

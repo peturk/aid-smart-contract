@@ -31,6 +31,6 @@ module.exports = function(deployer, network, accounts) {
     const startTime = Date.now()/1000|0 + 120;
     const endTime = startTime + (60*5); 
     const ethRate = new web3.BigNumber(1);
-    const wallet = accounts[0];
+    const wallet = accounts[1];
 deployer.deploy(SampleCrowdsale, startTime, endTime, ethRate, 100000000000000000000, 200000000000000000000, wallet);
 };

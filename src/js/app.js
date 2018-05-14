@@ -18,8 +18,14 @@ App = {
       web3 = new Web3(App.web3Provider);
     }
 
+    // App.simulation()
+
     return App.initContract();
   },
+
+  // simulation: function() {
+  //   // 
+  // }
 
   initContract: function() {
     $.ajax({
@@ -37,7 +43,7 @@ App = {
         }
     });
 
-    $.ajax({
+        $.ajax({
         url: 'SampleCrowdsaleToken.json',
         async: false,
         dataType: 'json',
@@ -48,15 +54,6 @@ App = {
 
           // Set the provider for our contract.
           App.contracts.SampleCrowdsaleToken.setProvider(App.web3Provider);
-
-          // THIS needs to be done only the first time we run the contract
-
-          // tokenAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10' 
-          // tokenAddress = '0xf2beae25b23f0ccdd234410354cb42d08ed54981'
-          // coin = App.contracts.SampleCrowdsaleToken.at(tokenAddress)
-          // // crowdsaleAddress = '0xf25186b5081ff5ce73482ad761db0eb0d25abfbf'
-          // crowdsaleAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10'
-          // coin.transferOwnership(crowdsaleAddress)
 
           return App.getBalance(), App.getTokenContractAddress();
         }
