@@ -18,14 +18,8 @@ App = {
       web3 = new Web3(App.web3Provider);
     }
 
-    // App.simulation()
-
     return App.initContract();
   },
-
-  // simulation: function() {
-  //   // 
-  // }
 
   initContract: function() {
     $.ajax({
@@ -387,6 +381,16 @@ App = {
       });
       })
     })
+  },
+
+  payRvkWallet: function() {
+    // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
+    console.log('Paying eth to reykjavik');
+    var crowdsale;
+    App.contracts.SampleCrowdsale.deployed().then(function(instance) {
+      crowdsale = instance;
+      crowdsale.payRvkWallet();
+    });
   },
 
   getEthRefundValue: function() {
