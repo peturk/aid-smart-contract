@@ -34,12 +34,22 @@
         </div>
       </div>
  
+      <!-- map -->
       <div id="map"></div>
+
+      <!-- handrit -->
       <div>
-        <button id="handrit" class="btn btn-primary">
+        <button id="handrit" class="btn btn-primary" >
           Handrit
         </button>
       </div>
+      <script>
+
+        document.getElementById("handrit").onclick = function () { 
+          var y = App.Handrit.m;
+          console.log("Does not work: " + y);
+          console.log(App.Handrit.m) };
+      </script>
 
       <!-- GET -->
       <div>

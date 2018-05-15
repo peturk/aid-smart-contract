@@ -73,6 +73,15 @@ App = {
   Handrit: function() {
     var myVar = setInterval(myTimer, 1000);
     App.test();
+    var hello = {
+      "employees":[
+          {"firstName":"John", "lastName":"Doe"}, 
+          {"firstName":"Anna", "lastName":"Smith"},
+          {"firstName":"Peter", "lastName":"Jones"}
+      ]
+    }
+    m = hello.employees[1].firstName
+    // console.log(m)   
     function myTimer() {
         console.log("Hello")
         
