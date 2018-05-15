@@ -50,10 +50,7 @@
         </button>
       </div>
       <script>
-        document.getElementById("handrit").onclick = function () { 
-          var y = App.Handrit.m;
-          console.log("Does not work: " + y);
-          console.log(App.Handrit.m) };
+        
       </script>
 
       <!-- GET -->
@@ -117,6 +114,10 @@
 
     <!-- Map API -->
     <script>
+        document.getElementById("handrit").onclick = function () { 
+          console.log("Unnar bad boy")
+          setImage(64.0888148,-21.9004728, 20)
+        };
         
         var sweet
         var oldSweet = sweet
@@ -136,7 +137,7 @@
             zoom: 6.2,
             center: {lat: 64.7343702, lng: -19.035984}
           });
-          setTimeout(function() { setImage(64.0888148,-21.9004728, 20); }, 0);
+          // setTimeout(function() { setImage(64.0888148,-21.9004728, 20); }, 0);
         }
         
         function setImage(lat, long, speed) {
