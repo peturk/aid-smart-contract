@@ -66,8 +66,26 @@ App = {
     
     $(document).on('click', '#buyWithoutMetaMask', App.BuyTokenWithoutMetaMask);
 
+    $(document).on('click', '#handrit', App.Handrit);    
     $(document).on('click', '#showMap', App.windMap);
     $(document).on('submit', '#TheForm', App.submitTheForm);
+  },
+  Handrit: function() {
+    var myVar = setInterval(myTimer, 1000);
+    App.test();
+    function myTimer() {
+        console.log("Hello")
+        
+        clearInterval(myVar);
+    }
+  },
+  test: function() {
+    var ok = setInterval(check, 1000);
+
+    function check() {
+        console.log("Alright")
+        clearInterval(ok);
+    }
   },
 
   submitTheForm: function(e) {
@@ -127,7 +145,7 @@ App = {
           east:  long+0.3+offset,
           west:  long-0.3-offset
         };
-
+        
         windImage = new google.maps.GroundOverlay(
             'http://www.pngmart.com/files/3/Wind-PNG-Clipart.png',
             imageBounds);

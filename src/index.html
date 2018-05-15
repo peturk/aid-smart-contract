@@ -35,6 +35,11 @@
       </div>
  
       <div id="map"></div>
+      <div>
+        <button id="handrit" class="btn btn-primary">
+          Handrit
+        </button>
+      </div>
 
       <!-- GET -->
       <div>
@@ -97,8 +102,9 @@
 
     <!-- Map API -->
     <script>
-
+        
         var sweet
+        var oldSweet = sweet
         $.getJSON( "/disaster_areas.json", callbackFuncWithData);
         function callbackFuncWithData(data)
         {
