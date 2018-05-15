@@ -393,6 +393,36 @@ App = {
     });
   },
 
+    payAkWallet: function() {
+    // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
+    console.log('Paying eth to Akureyri');
+    var crowdsale;
+    App.contracts.SampleCrowdsale.deployed().then(function(instance) {
+      crowdsale = instance;
+      crowdsale.payAkWallet();
+    });
+  },
+
+    payIsaWallet: function() {
+    // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
+    console.log('Paying eth to Isafjordur');
+    var crowdsale;
+    App.contracts.SampleCrowdsale.deployed().then(function(instance) {
+      crowdsale = instance;
+      crowdsale.payIsaWallet();
+    });
+  },
+
+    payEgilWallet: function() {
+    // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
+    console.log('Paying eth to Egilsstadir');
+    var crowdsale;
+    App.contracts.SampleCrowdsale.deployed().then(function(instance) {
+      crowdsale = instance;
+      crowdsale.payEgilWallet();
+    });
+  },
+
   getEthRefundValue: function() {
     console.log('Getting Eth Refund value...');
     App.contracts.SampleCrowdsale.deployed()
