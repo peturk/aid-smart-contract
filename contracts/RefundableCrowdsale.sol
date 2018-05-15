@@ -18,6 +18,8 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
   // minimum amount of funds to be raised in weis
   uint256 public goal;
 
+  uint256 public vaultBalance;
+
   // refund vault used to hold funds while crowdsale is running
   RefundVault public vault;
 
@@ -57,6 +59,11 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
 
   function goalReached() public view returns (bool) {
     return weiRaised >= goal;
+  }
+
+  function updateVaultBalance() public
+  {
+    vaultBalance = vault.getVaultBal();
   }
 
   // vault finalization task, called when owner calls finalize()
