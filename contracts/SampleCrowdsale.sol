@@ -4,7 +4,7 @@ import "./Crowdsale.sol";
 import "./CappedCrowdsale.sol";
 import "./RefundableCrowdsale.sol";
 import "./MintedCrowdsale.sol";
-import "./oraclizeAPI.sol";
+
 import "./MintableToken.sol";
 
 contract SampleCrowdsaleToken is MintableToken {
@@ -18,7 +18,7 @@ contract SampleCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     // using SafeMath for uint256;
 
     string public weatherInfoRvk;
- 
+
     function SampleCrowdsale (
         uint256 _openingTime,
         uint256 _closingTime,

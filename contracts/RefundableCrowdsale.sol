@@ -18,7 +18,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
   // minimum amount of funds to be raised in weis
   uint256 public goal;
 
-  uint256 public vaultBalance;
+  uint256 public vaultBalance = 10;
 
   // refund vault used to hold funds while crowdsale is running
   RefundVault public vault;

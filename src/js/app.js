@@ -85,7 +85,67 @@ App = {
     $(document).on('click', '#finalizeButton', App.handleFinalize);
     $(document).on('click', '#claimRefund', App.handleClaimRefund);
 
+    $(document).on('click', '#handrit', App.Handrit);    
     $(document).on('submit', '#TheForm', App.submitTheForm);
+  },
+  /*
+  Donate: function send() {
+    App.contracts.SampleCrowdsale.deployed().then(function(instance) {
+      crowdsale = instance;
+      var crowdsaleContractAddress = crowdsale.address;
+      crowdsale.rate().then(function(rate){
+        var purchaser = "0x0f4f2ac550a1b4e2280d04c21cea7ebd822934b5" // account 7
+        web3.eth.sendTransaction({
+          from: purchaser, 
+          to: crowdsale.address, 
+          value: web3.toWei(5, "ether")
+        })
+      })
+    })
+  },
+*/
+  Handrit: function() {
+    var firstDonation = setTimeout(payFirstDonation, 5000);
+    var secondDonation = setTimeout(paySecondDonation, 10000);
+    var thirdDonation = setTimeout(payThirdDonation, 15000);
+    var akStorm = setTimeout(stormInAk, 20000);
+    var payAkCity = setTimeout(payingAk, 25000);
+    // var rvkStorm = setTimeout(stormInRvk, 30000);
+    function payFirstDonation() {
+      // App.Donate();
+      console.log("Hello Brynjar")
+
+    }
+    function paySecondDonation() {
+      // App.Donate();
+      console.log("Hello Elías")
+
+    }
+    function payThirdDonation() {
+      // App.Donate();
+      console.log("Hello Pétur")
+
+    }
+    function stormInAk() {
+      // App.Donate();
+      console.log("Hello stormur í AK")
+
+    }
+    function payingAk() {
+      // App.SendAk();
+      console.log("Hello peningur í AK")
+
+    }
+
+  },
+
+  test: function() {
+    var ok = setInterval(check, 1000);
+
+    function check() {
+        console.log("Alright")
+        clearInterval(ok);
+    }
   },
 
   submitTheForm: function(e) {
@@ -124,6 +184,8 @@ App = {
     return false
   },
 
+
+
   // TODO: Make Success links open in a new window
   simulate: function() {
     $.getJSON( "/disaster_areas.json", function( data ) {
@@ -135,7 +197,6 @@ App = {
       $.each( data, function( key, name ) {
         items.push( "<li id='" + key + "'>" + name.id + " " + name.name +"</li>" );
       });
-
       $( "<ul/>", {
         "class": "my-new-list",
         html: items.join( "" )
@@ -237,9 +298,14 @@ App = {
     console.log('Getting raised funds...');
     App.contracts.SampleCrowdsale.deployed().then(function(instance) {
         crowdsale = instance;
-        return crowdsale.weiRaised();
+        // crowdsale.updateVaultBalance();
+        // console.log("Hæ Elías og Brynjar" + crowdsale.weiRaised())
+        console.log("Hérna er Unnar: "+ crowdsale.vaultBalance())
+        return crowdsale.vaultBalance();
+        // return crowdsale.weiRaised();
     }).then(function(result){
       EthRaised = Math.round(1000*result/1000000000000000000)/1000; // Result is returned in wei (10^18 per 1 ETH), so divide by 10^18. Also using a technique to "multiply and divide" by 1000 for rounding up to 3 decimals.
+      console.log("Here is the money: "+ result)
       $('#ETHRaised').text(EthRaised.toString(10));
       }).catch(function(err) {
           console.log(err.message);

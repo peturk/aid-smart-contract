@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,24 +33,52 @@
           <br/>
         </div>
       </div>
+ 
+      <!-- map -->
+      <div id="map"></div>
 
       <div>
+        <button id="funds" class="btn btn-primary" >
+          funds
+        </button>
+      </div>
+      
+      <!-- handrit -->
+      <div>
+        <button id="handrit" class="btn btn-primary" >
+          Handrit
+        </button>
+      </div>
+      <script>
+        document.getElementById("handrit").onclick = function () { 
+          var y = App.Handrit.m;
+          console.log("Does not work: " + y);
+          console.log(App.Handrit.m) };
+      </script>
+
+      <!-- GET -->
+      <div>
+        <button id="simulate" class="btn btn-primary">
+          Hlaða JSON
+        </button>
+      </div>
+            
+      <!-- POST -->
+      <div class="container">
           <form
             id = "TheForm"
             action = "#"
             method = "POST"
           >
-            Vindhradi: <input type = "text" name = "vindhradi"> <br>
-            <input type = "submit" value = "Submit">
-          </form>
+          <div class="form-group row">
+            <label for="vindhradi" class="col-sm-1 col-form-label" id=texti>Vindhraði</label>
+            <div class="col-sm-10">
+              <input type = "text" name = "vindhradi" class="form-inline">
+              <input type = "submit" value = "Submit" class="btn btn-primary">
+            </div>
+          </div>
+        </form>
       </div>
-
-      <div>
-        <button id="simulate">
-          earthquake
-        </button>
-      </div>
-
 
       <div id="petsRow" class="row">
         <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
@@ -86,6 +114,75 @@
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
+
+    <!-- Map API -->
+    <script>
+        
+        var sweet
+        var oldSweet = sweet
+        $.getJSON( "/disaster_areas.json", callbackFuncWithData);
+        function callbackFuncWithData(data)
+        {
+          let hello = data
+          sweet = hello[0].vindhradi
+          console.log(sweet)
+          console.log("Here is some: "+ hello[0].vindhradi)
+        }
+        console.log("What is here: " + sweet)
+        var windImage;
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 6.2,
+            center: {lat: 64.7343702, lng: -19.035984}
+          });
+          setTimeout(function() { setImage(64.0888148,-21.9004728, 20); }, 0);
+        }
+        
+        function setImage(lat, long, speed) {
+          speed = sweet
+          var offset = Math.sqrt(speed)/10;
+          var imageBounds = {
+            north: lat+0.1+offset,
+            south: lat-0.1-offset,
+            east:  long+0.3+offset,
+            west:  long-0.3-offset
+          };
+          windImage = new google.maps.GroundOverlay(
+              'http://www.pngmart.com/files/3/Wind-PNG-Clipart.png',
+              imageBounds);
+          windImage.setMap(map);
+          //Remove image after 10 seconds
+          //setTimeout(removeImage, 10000);
     
+        } 
+        
+        function removeImage() {
+          windImage.setMap(null);
+        }
+      </script>
+
+      <!-- Style for button & map -->
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5Nx5qZdIfASvSZBVpCqt_ZYSUdH7dZd4&callback=initMap">
+      </script>
+      <style>
+          /* Always set the map height explicitly to define the size of the div
+          * element that contains the map. */
+          #texti {
+            font-size: 20px;
+            margin-right: 10px;
+            margin-left: -10px;
+          }
+          #map {
+            height: 400px;
+          }
+          /* Optional: Makes the sample page fill the window. */
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+        </style>
   </body>
 </html>

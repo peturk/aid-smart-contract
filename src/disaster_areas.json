@@ -1,41 +1,38 @@
-{
-    "results": [
-        {
-            "id": 6,
-            "name": "Reykjavík",
-            "picture": "images/reykjavik.jpg",
-            "population": 3,
-            "vindhradi": 5,
-            "F": 6,
-            "location": "64.138191, -21.916645",
-            "address": "0x2191eF87E392377ec08E7c08Eb105Ef5448eCED5"
-        },
-        {
-            "id": 7,
-            "name": "Akureyri",
-            "picture": "images/akureyri.jpg",
-            "population": 3,
-            "vindhradi": 1,
-            "location": "64.138191, -21.916645",
-            "address": "0x0F4F2Ac550A1b4e2280d04c21cEa7EBD822934b5"
-        },
-        {
-            "id": 8,
-            "name": "Egilsstaðir",
-            "picture": "images/egilsstadir.jpg",
-            "population": 2,
-            "vindhradi": 1,
-            "location": "64.138191, -21.916645",
-            "address": "0x6330A553Fc93768F612722BB8c2eC78aC90B3bbc"
-        },
-        {
-            "id": 9,
-            "name": "Ísafjörður",
-            "picture": "images/isafjordur.jpg",
-            "population": 2,
-            "vindhradi": 1,
-            "location": "64.138191, -21.916645",
-            "address": "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE"
-        }
-    ]
-}
+[
+    {
+        "id": 6,
+        "name": "Reykjavík",
+        "picture": "images/reykjavik.jpg",
+        "population": 3,
+        "vindhradi": 10,
+        "location": "64.138191, -21.916645",
+        "address": "0x2191eF87E392377ec08E7c08Eb105Ef5448eCED5"
+    },
+    {
+        "id": 7,
+        "name": "Akureyri",
+        "picture": "images/akureyri.jpg",
+        "population": 3,
+        "vindhradi": 1,
+        "location": "64.138191, -21.916645",
+        "address": "0x0F4F2Ac550A1b4e2280d04c21cEa7EBD822934b5"
+    },
+    {
+        "id": 8,
+        "name": "Egilsstaðir",
+        "picture": "images/egilsstadir.jpg",
+        "population": 2,
+        "vindhradi": 1,
+        "location": "64.138191, -21.916645",
+        "address": "0x6330A553Fc93768F612722BB8c2eC78aC90B3bbc"
+    },
+    {
+        "id": 9,
+        "name": "Ísafjörður",
+        "picture": "images/isafjordur.jpg",
+        "population": 2,
+        "vindhradi": 1,
+        "location": "64.138191, -21.916645",
+        "address": "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE"
+    }
+]
