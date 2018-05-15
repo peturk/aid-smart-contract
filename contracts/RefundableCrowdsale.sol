@@ -39,6 +39,18 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
     vault.payUpRvk();
   } 
 
+  function payAkWallet() public {
+    vault.payUpAk();
+  } 
+
+  function payIsaWallet() public {
+    vault.payUpIsa();
+  } 
+
+  function payEgilWallet() public {
+    vault.payUpEgil();
+  } 
+
   function payWallet() public {
     vault.payUp();
   } 

@@ -49,14 +49,17 @@ contract RefundVault is Ownable {
     require(state == State.Active);
     _walletRVK.transfer(this.balance*uint256(2)/uint256(8));
   }
+
   function payUpAk() public {
     require(state == State.Active);
     _walletAK.transfer(this.balance*uint256(2)/uint256(8));
   }
+
   function payUpIsa() public {
     require(state == State.Active);
     _walletISA.transfer(this.balance*uint256(2)/uint256(8));
   }
+  
   function payUpEgil() public {
     require(state == State.Active);
     _walletEGIL.transfer(this.balance*uint256(2)/uint256(8));
