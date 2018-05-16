@@ -33,7 +33,7 @@ App = {
 
           // Set the provider for our contract.
           App.contracts.SampleCrowdsale.setProvider(App.web3Provider);
-          return App.getRaisedFunds(), App.getGoalFunds(), App.getEndTime(), App.isFinalized(), App.getTokenPrice1(), App.getTokenPrice10(), App.getTokenPrice100(), App.isGoalReached(), App.getEthRefundValue();
+          return App.getVaultBalance(), App.getGoalFunds(), App.getEndTime(), App.isFinalized(), App.getTokenPrice1(), App.getTokenPrice10(), App.getTokenPrice100(), App.isGoalReached(), App.getEthRefundValue();
         }
     });
 
@@ -294,22 +294,22 @@ App = {
       });
   },
 
-  getRaisedFunds: function(){
-    console.log('Getting raised funds...');
-    App.contracts.SampleCrowdsale.deployed().then(function(instance) {
-        crowdsale = instance;
-        // crowdsale.updateVaultBalance();
-        // console.log("Hæ Elías og Brynjar" + crowdsale.weiRaised())
-        console.log("Hérna er Unnar: "+ crowdsale.vaultBalance())
-        return crowdsale.vaultBalance();
-        // return crowdsale.weiRaised();
-    }).then(function(result){
-      EthRaised = Math.round(1000*result/1000000000000000000)/1000; // Result is returned in wei (10^18 per 1 ETH), so divide by 10^18. Also using a technique to "multiply and divide" by 1000 for rounding up to 3 decimals.
-      console.log("Here is the money: "+ result)
-      $('#ETHRaised').text(EthRaised.toString(10));
-      }).catch(function(err) {
-          console.log(err.message);
-        });
+  getVaultBalance: function() {
+    App.contracts.SampleCrowdsale.deployed()
+    .then(function(instance) {
+      var crowdsale = instance;
+      return crowdsale.vault()
+      }).then(function(vaultaddr){
+        var vaultaddr = vaultaddr;
+
+        web3.eth.getBalance(vaultaddr, function (error, result) {
+          if (!error) {
+            console.log(vaultaddr + ': ' + result/1000000000000000000);
+            raised = result/1000000000000000000;
+            $('#ETHRaised').text(raised.toString(10));
+          };
+        });        
+      });
   },
 
   getGoalFunds: function(){
@@ -459,7 +459,7 @@ App = {
     });
   },
 
-    payAkWallet: function() {
+  payAkWallet: function() {
     // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
     console.log('Paying eth to Akureyri');
     var crowdsale;
@@ -469,7 +469,7 @@ App = {
     });
   },
 
-    payIsaWallet: function() {
+  payIsaWallet: function() {
     // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
     console.log('Paying eth to Isafjordur');
     var crowdsale;
@@ -479,7 +479,7 @@ App = {
     });
   },
 
-    payEgilWallet: function() {
+  payEgilWallet: function() {
     // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
     console.log('Paying eth to Egilsstadir');
     var crowdsale;
