@@ -104,40 +104,55 @@ App = {
     })
   },
 */
-  Handrit: function() {
-    var firstDonation = setTimeout(payFirstDonation, 5000);
-    var secondDonation = setTimeout(paySecondDonation, 10000);
-    var thirdDonation = setTimeout(payThirdDonation, 15000);
-    var akStorm = setTimeout(stormInAk, 20000);
-    var payAkCity = setTimeout(payingAk, 25000);
-    // var rvkStorm = setTimeout(stormInRvk, 30000);
-    function payFirstDonation() {
-      // App.Donate();
-      console.log("Hello Brynjar")
+Handrit: function() {
+  var firstDonation = setTimeout(payFirstDonation, 5000);
+  var secondDonation = setTimeout(paySecondDonation, 10000);
+  var thirdDonation = setTimeout(payThirdDonation, 15000);
+  var akStorm = setTimeout(stormInAk, 20000);
+  var payAkCity = setTimeout(payingAk, 25000);
+  var egiStorm = setTimeout(stormInEgi, 30000);
+  var payEgiCity = setTimeout(payingEgi, 35000);
+  var refreshVault = setTimeout(getVault, 40000);
+  function payFirstDonation() {
+    App.handleBuy10Tokens();
+    console.log("First donation")
 
-    }
-    function paySecondDonation() {
-      // App.Donate();
-      console.log("Hello Elías")
+  }
+  function paySecondDonation() {
+    App.handleBuy10Tokens();
+    console.log("Second donation")
 
-    }
-    function payThirdDonation() {
-      // App.Donate();
-      console.log("Hello Pétur")
+  }
+  function payThirdDonation() {
+    App.handleBuy10Tokens();
+    console.log("Third donation")
 
-    }
-    function stormInAk() {
-      // App.Donate();
-      console.log("Hello stormur í AK")
+  }
+  function stormInAk() {
+    console.log("Storm in Akureyri")
 
-    }
-    function payingAk() {
-      // App.SendAk();
-      console.log("Hello peningur í AK")
+  }
+  function payingAk() {
+    App.payAkWallet();
+    App.getVaultBalance();
+    console.log("Paying björgunarsveitin in Akureyri")
 
-    }
+  }
+  function stormInEgi() {
+    console.log("Storm in Egilstaðir")
 
-  },
+  }
+  function payingEgi() {
+    App.payEgilWallet();
+    App.getVaultBalance();
+    console.log("Paying björgunarsveitin in Egilstöðum")
+
+  }
+  function getVault() {
+    App.getVaultBalance();
+  }
+
+},
 
   test: function() {
     var ok = setInterval(check, 1000);

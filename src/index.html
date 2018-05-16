@@ -36,31 +36,17 @@
  
       <!-- map -->
       <div id="map"></div>
-
-      <div>
-        <button id="funds" class="btn btn-primary" >
-          funds
-        </button>
-      </div>
       
-      <!-- handrit -->
-      <div>
-        <button id="handrit" class="btn btn-primary" >
-          Handrit
-        </button>
-      </div>
-      <script>
-        
-      </script>
 
-      <!-- GET -->
+
+      <!-- 
       <div>
         <button id="simulate" class="btn btn-primary">
           Hlaða JSON
         </button>
       </div>
             
-      <!-- POST -->
+      
       <div class="container">
           <form
             id = "TheForm"
@@ -76,7 +62,7 @@
           </div>
         </form>
       </div>
-
+      -->
       <div id="petsRow" class="row">
         <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
           <div class="panel panel-default">
@@ -84,6 +70,12 @@
               <h3 class="panel-title">My Wallet</h3>
             </div>
             <div class="panel-body">
+              <!-- handrit -->
+              <div>
+                <button id="handrit" class="btn btn-primary" >
+                  Handrit
+                </button>
+              </div>
               <h4>Balance</h4>
               Your Token balance: <strong><span id="tokenBalance"></span></strong> tokens<br/><br/>
               Get 1 token for <strong><span id="1TokenPrice"></span></strong> Eth<br/>
@@ -120,6 +112,8 @@
           //AK = 65.6792341,-18.101615
           setTimeout(function() { setImage(65.6792341,-18.101615, 20); }, 20000);
           setTimeout(removeImage, 25000);
+          setTimeout(function() { setImage(65.266874, -14.394847, 20); }, 30000);
+          setTimeout(removeImage, 35000);
         };
         
         var sweet
