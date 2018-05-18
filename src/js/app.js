@@ -106,13 +106,13 @@ App = {
 */
 Handrit: function() {
   var firstDonation = setTimeout(payFirstDonation, 5000);
-  var secondDonation = setTimeout(paySecondDonation, 10000);
-  var thirdDonation = setTimeout(payThirdDonation, 15000);
-  var akStorm = setTimeout(stormInAk, 20000);
-  var payAkCity = setTimeout(payingAk, 25000);
-  var egiStorm = setTimeout(stormInEgi, 30000);
-  var payEgiCity = setTimeout(payingEgi, 35000);
-  var refreshVault = setTimeout(getVault, 40000);
+  var secondDonation = setTimeout(paySecondDonation, 15000);
+  var thirdDonation = setTimeout(payThirdDonation, 25000);
+  var akStorm = setTimeout(stormInAk, 35000);
+  var payAkCity = setTimeout(payingAk, 40000);
+  var egiStorm = setTimeout(stormInEgi, 45000);
+  var payEgiCity = setTimeout(payingEgi, 50000);
+  var refreshVault = setTimeout(getVault, 55000);
   function payFirstDonation() {
     App.handleBuy10Tokens();
     console.log("First donation")
