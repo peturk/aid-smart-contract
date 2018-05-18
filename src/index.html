@@ -73,7 +73,7 @@
               <!-- handrit -->
               <div>
                 <button id="handrit" class="btn btn-primary" >
-                  Handrit
+                  Play Script
                 </button>
               </div>
               <h4>Balance</h4>
@@ -107,20 +107,13 @@
     <!-- Map API -->
     <script>
         document.getElementById("handrit").onclick = function () { 
-          console.log("Spila handrit...")
+          console.log("Playing script...")
           //RVK = 64.0888148,-21.9004728
           //AK = 65.6792341,-18.101615
-<<<<<<< HEAD
-          setTimeout(function() { setImage(65.6792341,-18.101615, 20); }, 35000);
-          setTimeout(removeImage, 40000);
-          setTimeout(function() { setImage(65.266874, -14.394847, 20); }, 45000);
-          setTimeout(removeImage, 50000);
-=======
-          setTimeout(function() { setImage(65.6792341,-18.101615, 90); }, 20000);
-          setTimeout(removeImage, 25000);
-          setTimeout(function() { setImage(65.266874, -14.394847, 20); }, 30000);
-          setTimeout(removeImage, 35000);
->>>>>>> 1159c3ae9879ce72829d5a90b540d59254653de8
+          setTimeout(function() { setImage(65.6792341,-18.101615, 20); }, 45000);
+          setTimeout(removeImage, 55000);
+          setTimeout(function() { setImage(65.266874, -14.394847, 20); }, 70000);
+          setTimeout(removeImage, 80000);
         };
         
         var sweet
@@ -130,10 +123,10 @@
         {
           let hello = data
           sweet = hello[0].vindhradi
-          console.log(sweet)
-          console.log("Here is some: "+ hello[0].vindhradi)
+          // console.log(sweet)
+          // console.log("Here is some: "+ hello[0].vindhradi)
         }
-        console.log("What is here: " + sweet)
+        // console.log("What is here: " + sweet)
         var windImage;
         var map;
         function initMap() {

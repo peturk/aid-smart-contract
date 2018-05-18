@@ -106,37 +106,55 @@ App = {
 */
 Handrit: function() {
   var firstDonation = setTimeout(payFirstDonation, 5000);
-  var secondDonation = setTimeout(paySecondDonation, 15000);
-  var thirdDonation = setTimeout(payThirdDonation, 25000);
-  var akStorm = setTimeout(stormInAk, 35000);
-  var payAkCity = setTimeout(payingAk, 40000);
-  var egiStorm = setTimeout(stormInEgi, 45000);
-  var payEgiCity = setTimeout(payingEgi, 50000);
-  var refreshVault = setTimeout(getVault, 55000);
+  var updateTheBalanceTimer1 = setTimeout(updateTheVault1, 10000);
+  var secondDonation = setTimeout(paySecondDonation, 20000);
+  var updateTheBalanceTimer2 = setTimeout(updateTheVault2, 25000);
+  var thirdDonation = setTimeout(payThirdDonation, 35000);
+  var updateTheBalanceTimer3 = setTimeout(updateTheVault3, 40000);
+  var akStorm = setTimeout(stormInAk, 45000);
+  var payAkCity = setTimeout(payingAk, 55000);
+  var updateTheBalanceTimer4 = setTimeout(updateTheVault4, 60000);
+  var egiStorm = setTimeout(stormInEgi, 70000);
+  var payEgiCity = setTimeout(payingEgi, 80000);
+  var updateTheBalanceTimer5 = setTimeout(updateTheVault5, 85000);
   function payFirstDonation() {
     App.handleBuy10Tokens();
+    App.getVaultBalance();
     console.log("First donation")
-
+  }
+  function updateTheVault1() {
+    App.getVaultBalance();
+    // console.log("#1 Update balance")
   }
   function paySecondDonation() {
     App.handleBuy10Tokens();
+    App.getVaultBalance();
     console.log("Second donation")
-
+  }
+  function updateTheVault2() {
+    App.getVaultBalance();
+    // console.log("#2 Update balance")
   }
   function payThirdDonation() {
     App.handleBuy10Tokens();
+    App.getVaultBalance();
     console.log("Third donation")
-
+  }
+  function updateTheVault3() {
+    App.getVaultBalance();
+    // console.log("#3 Update balance")
   }
   function stormInAk() {
     console.log("Storm in Akureyri")
-
   }
   function payingAk() {
     App.payAkWallet();
     App.getVaultBalance();
-    console.log("Paying björgunarsveitin in Akureyri")
-
+    console.log("Paying rescue team in Akureyri")
+  }
+  function updateTheVault4() {
+    App.getVaultBalance();
+    // console.log("#3 Update balance")
   }
   function stormInEgi() {
     console.log("Storm in Egilstaðir")
@@ -145,12 +163,13 @@ Handrit: function() {
   function payingEgi() {
     App.payEgilWallet();
     App.getVaultBalance();
-    console.log("Paying björgunarsveitin in Egilstöðum")
-
+    console.log("Paying rescue team in Egilstöðum")
   }
-  function getVault() {
+  function updateTheVault5() {
     App.getVaultBalance();
+    // console.log("#5 Update balance")
   }
+
 
 },
 
@@ -298,7 +317,7 @@ Handrit: function() {
       return crowdsale.token();
       }).then(function(address){
         var token_contract_address = address;
-        console.log('Token contract address: ' + token_contract_address);
+        // console.log('Token contract address: ' + token_contract_address);
         token_contract = App.contracts.MintableToken.at(token_contract_address);
         return token_contract.balanceOf(web3.eth.coinbase);
       }).then(function(balance) {
@@ -316,10 +335,10 @@ Handrit: function() {
       return crowdsale.vault()
       }).then(function(vaultaddr){
         var vaultaddr = vaultaddr;
-
+        // console.log("#      Updating balance      #")
         web3.eth.getBalance(vaultaddr, function (error, result) {
           if (!error) {
-            console.log(vaultaddr + ': ' + result/1000000000000000000);
+            // console.log(vaultaddr + ': ' + result/1000000000000000000);
             raised = result/1000000000000000000;
             $('#ETHRaised').text(raised.toString(10));
           };
@@ -466,7 +485,7 @@ Handrit: function() {
 
   payRvkWallet: function() {
     // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
-    console.log('Paying eth to reykjavik');
+    // console.log('Paying eth to reykjavik');
     var crowdsale;
     App.contracts.SampleCrowdsale.deployed().then(function(instance) {
       crowdsale = instance;
@@ -476,7 +495,7 @@ Handrit: function() {
 
   payAkWallet: function() {
     // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
-    console.log('Paying eth to Akureyri');
+    // console.log('Paying eth to Akureyri');
     var crowdsale;
     App.contracts.SampleCrowdsale.deployed().then(function(instance) {
       crowdsale = instance;
@@ -486,7 +505,7 @@ Handrit: function() {
 
   payIsaWallet: function() {
     // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
-    console.log('Paying eth to Isafjordur');
+    // console.log('Paying eth to Isafjordur');
     var crowdsale;
     App.contracts.SampleCrowdsale.deployed().then(function(instance) {
       crowdsale = instance;
@@ -496,7 +515,7 @@ Handrit: function() {
 
   payEgilWallet: function() {
     // event.preventDefault(); / copied from handleFinalized, not sure it is necessary
-    console.log('Paying eth to Egilsstadir');
+    // console.log('Paying eth to Egilsstadir');
     var crowdsale;
     App.contracts.SampleCrowdsale.deployed().then(function(instance) {
       crowdsale = instance;

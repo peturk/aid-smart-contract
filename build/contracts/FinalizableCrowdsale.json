@@ -253,7 +253,7 @@
         "id": 465,
         "nodeType": "ImportDirective",
         "scope": 511,
-        "sourceUnit": 1390,
+        "sourceUnit": 1389,
         "src": "28:24:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -342,10 +342,10 @@
               "id": 472,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1389,
+              "referencedDeclaration": 1388,
               "src": "301:8:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1389",
+                "typeIdentifier": "t_contract$_SafeMath_$1388",
                 "typeString": "library SafeMath"
               }
             },
@@ -470,10 +470,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "582:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -544,10 +544,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "610:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -810,7 +810,7 @@
         "id": 465,
         "nodeType": "ImportDirective",
         "scope": 511,
-        "sourceUnit": 1390,
+        "sourceUnit": 1389,
         "src": "28:24:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -899,10 +899,10 @@
               "id": 472,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1389,
+              "referencedDeclaration": 1388,
               "src": "301:8:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1389",
+                "typeIdentifier": "t_contract$_SafeMath_$1388",
                 "typeString": "library SafeMath"
               }
             },
@@ -1027,10 +1027,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "582:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1101,10 +1101,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "610:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1346,5 +1346,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-15T22:31:37.903Z"
+  "updatedAt": "2018-05-18T20:45:40.626Z"
 }

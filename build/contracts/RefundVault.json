@@ -272,7 +272,7 @@
         "id": 817,
         "nodeType": "ImportDirective",
         "scope": 1125,
-        "sourceUnit": 1390,
+        "sourceUnit": 1389,
         "src": "28:24:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -330,10 +330,10 @@
               "id": 821,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1389,
+              "referencedDeclaration": 1388,
               "src": "345:8:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1389",
+                "typeIdentifier": "t_contract$_SafeMath_$1388",
                 "typeString": "library SafeMath"
               }
             },
@@ -855,10 +855,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1066:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1130,10 +1130,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1225:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1219,7 +1219,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1788,
+                            "referencedDeclaration": 1787,
                             "src": "1308:3:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1295,7 +1295,7 @@
                         "lValueRequested": false,
                         "memberName": "add",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1388,
+                        "referencedDeclaration": 1387,
                         "src": "1284:23:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -1485,10 +1485,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1465:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1547,7 +1547,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1827,
+                              "referencedDeclaration": 1826,
                               "src": "1522:4:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -1861,10 +1861,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1602:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1923,7 +1923,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1827,
+                              "referencedDeclaration": 1826,
                               "src": "1658:4:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -2237,10 +2237,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1739:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2299,7 +2299,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1827,
+                              "referencedDeclaration": 1826,
                               "src": "1796:4:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -2613,10 +2613,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1880:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2675,7 +2675,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1827,
+                              "referencedDeclaration": 1826,
                               "src": "1938:4:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -2989,10 +2989,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "2022:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3029,7 +3029,7 @@
                           "name": "this",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1827,
+                          "referencedDeclaration": 1826,
                           "src": "2075:4:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -3215,10 +3215,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "2141:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3352,7 +3352,7 @@
                           "name": "this",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1827,
+                          "referencedDeclaration": 1826,
                           "src": "2236:4:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -3490,7 +3490,7 @@
                       "name": "this",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1827,
+                      "referencedDeclaration": 1826,
                       "src": "2326:4:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -3655,10 +3655,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "2399:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3912,10 +3912,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "2542:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4325,7 +4325,7 @@
         "id": 817,
         "nodeType": "ImportDirective",
         "scope": 1125,
-        "sourceUnit": 1390,
+        "sourceUnit": 1389,
         "src": "28:24:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -4383,10 +4383,10 @@
               "id": 821,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1389,
+              "referencedDeclaration": 1388,
               "src": "345:8:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1389",
+                "typeIdentifier": "t_contract$_SafeMath_$1388",
                 "typeString": "library SafeMath"
               }
             },
@@ -4908,10 +4908,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1066:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5183,10 +5183,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1225:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5272,7 +5272,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1788,
+                            "referencedDeclaration": 1787,
                             "src": "1308:3:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -5348,7 +5348,7 @@
                         "lValueRequested": false,
                         "memberName": "add",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1388,
+                        "referencedDeclaration": 1387,
                         "src": "1284:23:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -5538,10 +5538,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1465:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5600,7 +5600,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1827,
+                              "referencedDeclaration": 1826,
                               "src": "1522:4:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -5914,10 +5914,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1602:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5976,7 +5976,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1827,
+                              "referencedDeclaration": 1826,
                               "src": "1658:4:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -6290,10 +6290,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1739:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -6352,7 +6352,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1827,
+                              "referencedDeclaration": 1826,
                               "src": "1796:4:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -6666,10 +6666,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "1880:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -6728,7 +6728,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1827,
+                              "referencedDeclaration": 1826,
                               "src": "1938:4:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -7042,10 +7042,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "2022:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -7082,7 +7082,7 @@
                           "name": "this",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1827,
+                          "referencedDeclaration": 1826,
                           "src": "2075:4:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -7268,10 +7268,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "2141:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -7405,7 +7405,7 @@
                           "name": "this",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1827,
+                          "referencedDeclaration": 1826,
                           "src": "2236:4:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -7543,7 +7543,7 @@
                       "name": "this",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1827,
+                      "referencedDeclaration": 1826,
                       "src": "2326:4:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_RefundVault_$1124",
@@ -7708,10 +7708,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "2399:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -7965,10 +7965,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1791,
-                        1792
+                        1790,
+                        1791
                       ],
-                      "referencedDeclaration": 1791,
+                      "referencedDeclaration": 1790,
                       "src": "2542:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -8357,5 +8357,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-15T22:31:37.919Z"
+  "updatedAt": "2018-05-18T20:45:40.627Z"
 }
